@@ -154,7 +154,6 @@ export default function HeroSection({ onOpenRegister }) {
           muted
           playsInline
           preload="auto"
-          poster="/assets/john_wick_hero_bg.png"
           className={sharedVideoClass}
           style={{ opacity: 1, transition: `opacity ${CROSSFADE_DURATION}ms ease-in-out` }}
         />
