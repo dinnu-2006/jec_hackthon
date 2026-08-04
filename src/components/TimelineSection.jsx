@@ -24,10 +24,10 @@ export default function TimelineSection() {
     {
       phase: 'PHASE 03',
       date: 'OCT 01 – OCT 03, 2026',
-      title: 'THE 36-HOUR HACKATHON BLITZ',
+      title: 'THE 24-HOUR HACKATHON BLITZ',
       desc: 'Non-stop hacking at the central physical arena. Live midnight code reviews, mentor check-ins, and red-bull fueled coding.',
       status: 'MAIN EVENT',
-      details: ['36 Hours Non-stop Coding', 'Direct Mentor Office Hours', 'Midnight Cyber Security Capture-the-Flag']
+      details: ['24 Hours Non-stop Coding', 'Direct Mentor Office Hours', 'Midnight Cyber Security Capture-the-Flag']
     },
     {
       phase: 'PHASE 04',

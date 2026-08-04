@@ -8,7 +8,7 @@ export default function ScheduleSection() {
     1: [
       { time: '08:00 AM', event: 'RECEPTION & CHECK-IN', desc: 'Badge allocation, swags distribution, and squad desk assignment.', type: 'Logistics', icon: Coffee },
       { time: '10:00 AM', event: 'GRAND OPENING CEREMONY', desc: 'Keynote speeches by AI & Cyber leaders; revealing surprise problem twists.', type: 'Stage', icon: Terminal },
-      { time: '11:00 AM', event: 'HACKATHON CLOCK STARTS (HOUR 00)', desc: '36-hour countdown commences. Ideation & code repositories creation.', type: 'Coding', icon: Code },
+      { time: '11:00 AM', event: 'HACKATHON CLOCK STARTS (HOUR 00)', desc: '24-hour countdown commences. Ideation & code repositories creation.', type: 'Coding', icon: Code },
       { time: '02:00 PM', event: 'MENTOR OFFICE HOURS: SESSION 1', desc: 'One-on-one architecture review with track mentors.', type: 'Mentorship', icon: CheckCircle },
       { time: '08:00 PM', event: 'NEO-NOIR CYBER DINNER', desc: 'Catered high-protein dinner & ambient synthwave DJ set.', type: 'Break', icon: Coffee },
       { time: '11:59 PM', event: 'MIDNIGHT CAPTURE-THE-FLAG MINI GAME', desc: 'Optional speed hacking challenge with instant cash bounties.', type: 'Fun', icon: Terminal },
@@ -21,7 +21,7 @@ export default function ScheduleSection() {
       { time: '09:00 PM', event: 'FINAL NIGHT BUILD SPRINT', desc: 'Locks down backend APIs and core UI polish.', type: 'Coding', icon: Code },
     ],
     3: [
-      { time: '08:00 AM', event: 'FINAL REPO FREEZE (HOUR 36)', desc: 'All code commits locked. Video demos & pitch decks uploaded.', type: 'Deadline', icon: Clock },
+      { time: '08:00 AM', event: 'FINAL REPO FREEZE (HOUR 24)', desc: 'All code commits locked. Video demos & pitch decks uploaded.', type: 'Deadline', icon: Clock },
       { time: '09:30 AM', event: 'PRELIMINARY TRACK JUDGING', desc: '5-minute table demos before track judges across 7 rooms.', type: 'Judging', icon: Presentation },
       { time: '01:30 PM', event: 'TOP 15 FINALIST ANNOUNCEMENT', desc: 'Selected teams prepare for main auditorium stage pitch.', type: 'Stage', icon: Trophy },
       { time: '03:00 PM', event: 'GRAND AUDITORIUM FINALE PITCHES', desc: 'Live public prototype pitching to VC panel & audience.', type: 'Stage', icon: Presentation },
@@ -38,7 +38,7 @@ export default function ScheduleSection() {
           <div className="flex items-center gap-2 px-3 py-1 rounded bg-crimson/10 border border-crimson/30">
             <Clock className="w-3.5 h-3.5 text-crimson-bright" />
             <span className="font-mono text-xs uppercase tracking-[0.3em] text-crimson-bright font-bold">
-              36-HOUR CHRONOLOGY
+              24-HOUR CHRONOLOGY
             </span>
           </div>
           <h2 className="font-display text-3xl sm:text-5xl font-black uppercase tracking-tight text-white">

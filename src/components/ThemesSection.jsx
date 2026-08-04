@@ -77,7 +77,7 @@ export default function ThemesSection({ onOpenRegister }) {
       title: 'HEALTHCARE INNOVATION',
       subtitle: 'Biotech & Medical Diagnostics',
       desc: 'Develop predictive diagnostic AI engines, genomic sequence analyzers, and remote patient telemetry.',
-      detailedDesc: 'Revolutionize medicine by applying computer vision and neural networks to diagnostic imaging, drug discovery, and secure patient record sharing.',
+      detailedDesc: 'Over 24 intense hours, revolutionize medicine by applying computer vision and neural networks to diagnostic imaging, drug discovery, and secure patient record sharing.',
       problems: [
         'AI-assisted early cancer detection from multi-modal radiological scans.',
         'Federated learning network for multi-hospital clinical trials.',

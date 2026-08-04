@@ -17,7 +17,7 @@ export default function AboutSection() {
 
   const stats = [
     { label: 'PRIZE POOL', value: '$25,000+', icon: Trophy, desc: 'Cash rewards, incubation & perks' },
-    { label: 'HACKATHON DURATION', value: '36 HOURS', icon: Clock, desc: 'Non-stop creation & coding' },
+    { label: 'HACKATHON DURATION', value: '24 HOURS', icon: Clock, desc: 'Non-stop creation & coding' },
     { label: 'ELITE HACKERS', value: '500+', icon: Users, desc: 'Top engineers from across the nation' },
     { label: 'GLOBAL MENTORS', value: '20+', icon: Award, desc: 'AI leaders & industry pioneers' },
   ];
@@ -87,7 +87,7 @@ export default function AboutSection() {
                   Technology is accelerating exponentially. VYNORAE 2026 was engineered to challenge developers to step beyond trivial applications and confront high-stakes global challenges.
                 </p>
                 <p>
-                  Over 36 intense hours, you will collaborate with top-tier talent, leverage advanced compute resources, and build prototype systems under the direct guidance of leaders from Google DeepMind, OpenAI, Web3 Foundations, and Cyber defense institutes.
+                  Over 24 intense hours, you will collaborate with top-tier talent, leverage advanced compute resources, and build prototype systems under the direct guidance of leaders from Google DeepMind, OpenAI, Web3 Foundations, and Cyber defense institutes.
                 </p>
               </div>
 

@@ -63,7 +63,7 @@ export default function ContactFooter({ onOpenRegister }) {
             </div>
 
             <p className="font-sans text-xs leading-relaxed max-w-md">
-              VYNORAE 2026 is India's flagship National Hackathon on Emerging Technologies. Engineered to bring together elite software engineers, AI researchers, and cybersecurity builders for 36 non-stop hours of autonomous innovation.
+              VYNORAE 2026 is India's flagship National Hackathon on Emerging Technologies. Engineered to bring together elite software engineers, AI researchers, and cybersecurity builders for 24 non-stop hours of autonomous innovation.
             </p>
 
             <div className="pt-2 font-mono text-xs text-muted space-y-2">
@@ -93,7 +93,7 @@ export default function ContactFooter({ onOpenRegister }) {
               <li><a href="#themes" className="hover:text-crimson-bright transition-colors">03. Battleground Themes</a></li>
               <li><a href="#timeline" className="hover:text-crimson-bright transition-colors">04. Roadmap &amp; Timeline</a></li>
               <li><a href="#prizes" className="hover:text-crimson-bright transition-colors">05. Prize Pool &amp; Bounties</a></li>
-              <li><a href="#schedule" className="hover:text-crimson-bright transition-colors">06. 36-Hour Schedule</a></li>
+              <li><a href="#schedule" className="hover:text-crimson-bright transition-colors">06. 24-Hour Schedule</a></li>
               <li><a href="#judges" className="hover:text-crimson-bright transition-colors">07. Evaluation Council</a></li>
             </ul>
           </div>

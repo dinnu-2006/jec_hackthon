@@ -27,7 +27,7 @@ export default function FaqSection() {
     },
     {
       q: 'CAN WE USE PRE-EXISTING CODE OR LIBRARIES?',
-      a: 'You may utilize open-source frameworks, public APIs, third-party libraries, and pre-trained foundation models. However, all core application logic and project code must be built during the 36-hour hackathon window.',
+      a: 'You may utilize open-source frameworks, public APIs, third-party libraries, and pre-trained foundation models. However, all core application logic and project code must be built during the 24-hour hackathon window.',
     },
   ];
 
