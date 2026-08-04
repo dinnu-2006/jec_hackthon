@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+  
+  body {
+    background-color: #020202;
+    color: #D8D9DE;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  /* Tactical Dark Crimson Scrollbar */
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #020202;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #4A040A;
+    border-radius: 2px;
+    border: 1px solid rgba(158, 10, 22, 0.4);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #9E0A16;
+  }
+}
+
+@layer utilities {
+  /* Gritty Weathered Rusty Metallic Text Gradient */
+  .text-rusty-metallic {
+    background: linear-gradient(
+      180deg,
+      #E2E4E9 0%,
+      #9CA3AF 25%,
+      #4B5563 50%,
+      #9CA3AF 75%,
+      #374151 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.95)) contrast(125%);
+  }
+
+  /* Distressed Crimson Red Rusty Text Gradient */
+  .text-rusty-crimson {
+    background: linear-gradient(
+      180deg,
+      #FF4D4D 0%,
+      #D90416 30%,
+      #7A000A 60%,
+      #B80014 85%,
+      #5A0007 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 25px rgba(217, 4, 22, 0.75)) drop-shadow(0 4px 15px rgba(0, 0, 0, 0.9)) contrast(130%);
+  }
+
+  .text-glow-red {
+    text-shadow: 0 0 15px rgba(200, 0, 24, 0.65), 0 0 30px rgba(138, 8, 20, 0.45);
+  }
+
+  .text-glow-bright {
+    text-shadow: 0 0 20px rgba(229, 9, 20, 0.75), 0 0 35px rgba(158, 10, 22, 0.55);
+  }
+
+  .glass-card {
+    background: rgba(8, 8, 8, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(138, 8, 20, 0.3);
+  }
+
+  .glass-card-hover {
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .glass-card-hover:hover {
+    background: rgba(16, 4, 6, 0.95);
+    border-color: rgba(200, 0, 24, 0.6);
+    box-shadow: 0 0 30px rgba(158, 10, 22, 0.4);
+    transform: translateY(-3px);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.04);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 4s ease-in-out infinite;
+}
