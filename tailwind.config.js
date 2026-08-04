@@ -22,8 +22,9 @@ export default {
         muted: "#6E727A",
       },
       fontFamily: {
-        cinematic: ['"Cinzel Decorative"', '"Orbitron"', 'sans-serif'],
-        display: ['"Orbitron"', '"Outfit"', 'sans-serif'],
+        cinematic: ['"Gotico-Antiqua"', '"Cinzel Decorative"', '"Orbitron"', 'sans-serif'],
+        display: ['"Gotico-Antiqua"', '"Orbitron"', '"Outfit"', 'sans-serif'],
+        gothic: ['"Gotico-Antiqua"', 'serif'],
         sans: ['"Outfit"', '"Inter"', 'sans-serif'],
         mono: ['"JetBrains Mono"', 'monospace'],
       },

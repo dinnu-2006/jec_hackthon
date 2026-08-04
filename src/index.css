@@ -1,3 +1,6 @@
+/* ── Gotico-Antiqua – Primary Display Font ── */
+@import url('https://fonts.googleapis.com/css2?family=Gotico-Antiqua&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -31,34 +34,30 @@
 }
 
 @layer utilities {
-  /* Gritty Weathered Rusty Metallic Text Gradient */
+  /* Bright Clean Metallic Text */
   .text-rusty-metallic {
     background: linear-gradient(
       180deg,
-      #E2E4E9 0%,
-      #9CA3AF 25%,
-      #4B5563 50%,
-      #9CA3AF 75%,
-      #374151 100%
+      #FFFFFF 0%,
+      #E8EAED 40%,
+      #C8CDD6 100%
     );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.95)) contrast(125%);
+    filter: drop-shadow(0px 2px 12px rgba(255, 255, 255, 0.15));
   }
 
-  /* Distressed Crimson Red Rusty Text Gradient */
+  /* Bright Clean Crimson Text */
   .text-rusty-crimson {
     background: linear-gradient(
       180deg,
-      #FF4D4D 0%,
-      #D90416 30%,
-      #7A000A 60%,
-      #B80014 85%,
-      #5A0007 100%
+      #FF6B6B 0%,
+      #FF3B3B 40%,
+      #E50914 100%
     );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    filter: drop-shadow(0 0 25px rgba(217, 4, 22, 0.75)) drop-shadow(0 4px 15px rgba(0, 0, 0, 0.9)) contrast(130%);
+    filter: drop-shadow(0 0 20px rgba(255, 59, 59, 0.6));
   }
 
   .text-glow-red {

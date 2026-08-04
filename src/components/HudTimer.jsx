@@ -1,36 +1,28 @@
 import React, { useState, useEffect } from 'react';
 
 export default function HudTimer() {
-  const targetDate = new Date('2026-10-01T09:00:00+05:30').getTime();
+  // Hackathon: August 21, 2026 at 10:00 AM IST
+  const targetDate = new Date('2026-08-21T10:00:00+05:30').getTime();
 
-  const [timeLeft, setTimeLeft] = useState({
-    days: 17,
-    hours: 4,
-    minutes: 23,
-    seconds: 16,
-  });
+  const calcTime = () => {
+    const diff = targetDate - Date.now();
+    if (diff <= 0) return { days: 0, hours: 0, minutes: 0, seconds: 0 };
+    return {
+      days: Math.floor(diff / (1000 * 60 * 60 * 24)),
+      hours: Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+      minutes: Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60)),
+      seconds: Math.floor((diff % (1000 * 60)) / 1000),
+    };
+  };
+
+  const [timeLeft, setTimeLeft] = useState(calcTime);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      const now = new Date().getTime();
-      const difference = targetDate - now;
-
-      if (difference > 0) {
-        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-        const hours = Math.floor(
-          (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-        );
-        const minutes = Math.floor(
-          (difference % (1000 * 60 * 60)) / (1000 * 60)
-        );
-        const seconds = Math.floor((difference % (1000 * 60)) / 1000);
-
-        setTimeLeft({ days, hours, minutes, seconds });
-      }
+      setTimeLeft(calcTime());
     }, 1000);
-
     return () => clearInterval(interval);
-  }, [targetDate]);
+  }, []);
 
   const pad = (num) => String(num).padStart(2, '0');
 
@@ -68,7 +60,7 @@ export default function HudTimer() {
                 stroke="#FF3B3B"
                 strokeWidth="3.5"
                 strokeDasharray="251.2"
-                strokeDashoffset="55"
+                strokeDashoffset={251.2 - (251.2 * Math.min(timeLeft.days, 30)) / 30}
                 strokeLinecap="round"
               />
             </svg>

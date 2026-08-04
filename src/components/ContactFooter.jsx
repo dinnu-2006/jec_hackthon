@@ -1,24 +1,60 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Shield, Mail, MapPin, Phone, Github, Twitter, Linkedin, MessageSquare, ArrowUp } from 'lucide-react';
 
 export default function ContactFooter({ onOpenRegister }) {
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    video.muted = true;
+    video.defaultMuted = true;
+    video.playsInline = true;
+    video.loop = true;
+    const p = video.play();
+    if (p !== undefined) p.catch((e) => console.warn('Tiger video autoplay blocked:', e));
+  }, []);
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
-    <footer id="contact" className="relative bg-obsidian border-t border-crimson/30 pt-20 pb-12 overflow-hidden text-gray-400">
-      {/* Background Volumetric Glow */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-crimson/10 rounded-full blur-[140px] pointer-events-none" />
+    <footer id="contact" className="relative border-t border-crimson/30 pt-20 pb-12 overflow-hidden text-gray-400 min-h-[500px]">
 
+      {/* ── Tiger Video Background ── */}
+      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+        <video
+          ref={videoRef}
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="auto"
+          className="w-full h-full object-cover scale-105 transform-gpu"
+        >
+          <source src="/video/tiger.mp4" type="video/mp4" />
+        </video>
+
+        {/* Heavy dark overlay so text stays readable */}
+        <div className="absolute inset-0 bg-void/75 pointer-events-none" />
+        {/* Crimson vignette at bottom */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#020202] via-[#020202]/50 to-transparent pointer-events-none" />
+        {/* Side vignettes */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#020202]/70 via-transparent to-[#020202]/70 pointer-events-none" />
+        {/* Crimson glow at bottom center */}
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-crimson/15 rounded-full blur-[120px] pointer-events-none" />
+      </div>
+
+      {/* Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 pb-16 border-b border-white/10">
-          
+
           {/* Brand Column */}
           <div className="lg:col-span-5 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="p-2 rounded border border-crimson/40 bg-obsidian text-crimson-bright">
+              <div className="p-2 rounded border border-crimson/40 bg-obsidian/80 text-crimson-bright backdrop-blur-sm">
                 <Shield className="w-6 h-6" />
               </div>
               <span className="font-display font-black text-2xl tracking-[0.2em] text-white">
@@ -55,8 +91,8 @@ export default function ContactFooter({ onOpenRegister }) {
               <li><a href="#home" className="hover:text-crimson-bright transition-colors">01. Home</a></li>
               <li><a href="#about" className="hover:text-crimson-bright transition-colors">02. Mission Briefing</a></li>
               <li><a href="#themes" className="hover:text-crimson-bright transition-colors">03. Battleground Themes</a></li>
-              <li><a href="#timeline" className="hover:text-crimson-bright transition-colors">04. Roadmap & Timeline</a></li>
-              <li><a href="#prizes" className="hover:text-crimson-bright transition-colors">05. Prize Pool & Bounties</a></li>
+              <li><a href="#timeline" className="hover:text-crimson-bright transition-colors">04. Roadmap &amp; Timeline</a></li>
+              <li><a href="#prizes" className="hover:text-crimson-bright transition-colors">05. Prize Pool &amp; Bounties</a></li>
               <li><a href="#schedule" className="hover:text-crimson-bright transition-colors">06. 36-Hour Schedule</a></li>
               <li><a href="#judges" className="hover:text-crimson-bright transition-colors">07. Evaluation Council</a></li>
             </ul>
@@ -65,7 +101,7 @@ export default function ContactFooter({ onOpenRegister }) {
           {/* Socials & Dispatch Box */}
           <div className="lg:col-span-4 space-y-4">
             <h4 className="font-display text-xs font-bold uppercase tracking-[0.2em] text-white mb-4">
-              CONNECT & DISPATCH
+              CONNECT &amp; DISPATCH
             </h4>
             <p className="font-sans text-xs">
               Stay connected with real-time announcements, track problem statements releases, and AMA office hours.
@@ -86,7 +122,7 @@ export default function ContactFooter({ onOpenRegister }) {
                     href={social.href}
                     target="_blank"
                     rel="noreferrer"
-                    className="p-3 rounded-lg bg-obsidian/90 border border-crimson/30 hover:border-crimson hover:text-crimson-bright hover:bg-crimson/20 transition-all duration-300"
+                    className="p-3 rounded-lg bg-obsidian/80 border border-crimson/30 hover:border-crimson hover:text-crimson-bright hover:bg-crimson/20 transition-all duration-300 backdrop-blur-sm"
                   >
                     <Icon size={16} />
                   </a>

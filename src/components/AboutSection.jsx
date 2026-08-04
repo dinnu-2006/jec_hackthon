@@ -1,7 +1,20 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Target, ShieldCheck, Flame, Trophy, Users, Clock, Award } from 'lucide-react';
 
 export default function AboutSection() {
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    video.muted = true;
+    video.defaultMuted = true;
+    video.playsInline = true;
+    video.loop = true;
+    const p = video.play();
+    if (p !== undefined) p.catch((e) => console.warn('About video autoplay blocked:', e));
+  }, []);
+
   const stats = [
     { label: 'PRIZE POOL', value: '$25,000+', icon: Trophy, desc: 'Cash rewards, incubation & perks' },
     { label: 'HACKATHON DURATION', value: '36 HOURS', icon: Clock, desc: 'Non-stop creation & coding' },
@@ -10,12 +23,36 @@ export default function AboutSection() {
   ];
 
   return (
-    <section id="about" className="relative py-24 bg-void/90 overflow-hidden">
-      {/* Background Subtle Lines */}
-      <div className="absolute inset-0 bg-[radial-gradient(#1A0508_1px,transparent_1px)] [background-size:32px_32px] opacity-40 pointer-events-none" />
-      
+    <section id="about" className="relative py-24 overflow-hidden">
+
+      {/* ── Tiger Video Background ── */}
+      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+        <video
+          ref={videoRef}
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="auto"
+          className="w-full h-full object-cover scale-105 transform-gpu"
+        >
+          <source src="/video/tiger.mp4" type="video/mp4" />
+        </video>
+
+        {/* Heavy dark overlay for readability */}
+        <div className="absolute inset-0 bg-void/80 pointer-events-none" />
+        {/* Top/bottom fade */}
+        <div className="absolute inset-0 bg-gradient-to-b from-void via-transparent to-void pointer-events-none" />
+        {/* Side vignettes */}
+        <div className="absolute inset-0 bg-gradient-to-r from-void/60 via-transparent to-void/60 pointer-events-none" />
+        {/* Subtle dot grid overlay */}
+        <div className="absolute inset-0 bg-[radial-gradient(#1A0508_1px,transparent_1px)] [background-size:32px_32px] opacity-30 pointer-events-none" />
+        {/* Crimson glow center */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-crimson/10 rounded-full blur-[120px] pointer-events-none" />
+      </div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
+
         {/* Header */}
         <div className="flex flex-col items-center text-center space-y-4 mb-16">
           <div className="flex items-center gap-2 px-3 py-1 rounded bg-crimson/10 border border-crimson/30">
@@ -34,12 +71,12 @@ export default function AboutSection() {
 
         {/* Content Split Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          
+
           {/* Left Text Box */}
           <div className="lg:col-span-6 space-y-6">
             <div className="glass-card p-8 rounded-2xl border-crimson/30 relative">
               <div className="absolute top-0 right-0 w-24 h-24 bg-crimson/10 rounded-full blur-2xl pointer-events-none" />
-              
+
               <h3 className="font-display text-2xl font-bold uppercase tracking-wider text-white mb-4 flex items-center gap-3">
                 <Flame className="text-crimson-bright w-6 h-6 animate-pulse" />
                 THE NEXT CYBER FRONTIER
@@ -88,7 +125,7 @@ export default function AboutSection() {
                   <div className="absolute top-3 right-3 p-2 rounded-lg bg-crimson/10 border border-crimson/30 group-hover:border-crimson group-hover:bg-crimson/20 transition-colors">
                     <Icon className="w-5 h-5 text-crimson-bright" />
                   </div>
-                  
+
                   <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted font-bold block mb-2">
                     {item.label}
                   </span>
